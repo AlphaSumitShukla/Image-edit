@@ -1,0 +1,237 @@
+*{
+    margin: 0;;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+     width: 100%;
+
+}
+
+html{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+
+
+main{
+    width: 100%;
+}
+
+main section{
+    width: 100%;
+    padding: var(--padding-2xl);
+    display: flex;
+    gap: var(--gutter-l);
+}
+.btn{
+    padding: var(--padding-sm) var(--padding-md);
+    border: none;
+    outline: none;
+    border-radius: var(--border-m);
+    background-color: var(--bg-active);
+    cursor: pointer;
+    color: var(--text-active);
+    transition: 
+        background-color .25s ease,
+        color .25s ease,
+        transform .12s ease,
+        box-shadow .12s ease;
+}
+
+
+.btn:hover{
+    background-color: var(--bg-error);
+    color: var(--bg-active);
+}
+
+
+.btn:active{
+    transform: scale(0.96);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+
+
+#reset-btn{
+    background-color: var(--bg-error);
+    color: var(--text-primary);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#reset-btn:active{
+    transform: scale(0.95);
+}
+
+
+
+#download-btn{
+    background-color:  var(--bg-success);
+    color: var(--text-primary);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#download-btn:active{
+    transform: scale(0.95);
+}
+
+
+main section .left{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: var(--gutter-l);
+     width: 70%;
+
+}
+main section .right{
+    width: 30%;
+    background-color: var(--bg-secoundary);
+    padding: var(--padding-lg);
+    border-radius: var(--border-l);
+}
+
+main section .top{
+    display: flex;
+    align-items: center;
+    gap: var(--gutter-m);
+}
+
+main section .bottom{
+    background-color: var(--bg-secoundary);
+    width: 100%;
+    padding: var(--padding-2xl);
+    aspect-ratio: 5/3;
+    border-radius: var(--border-xl);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main section .bottom .placeholder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.6;
+    gap: var(--gutter-m);
+}
+
+main section .bottom .placeholder i {
+    font-size: 10rem;
+}
+
+main section .bottom .placeholder p{
+    font-size: var(--font-l);
+}
+
+main section .right{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-m);
+}
+
+main section .right .filters{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-m);
+}
+
+main section .right .filter{
+    width: 100%;
+}
+
+main section .right .filter input{
+    width: 100%;
+    outline: none;
+    margin-top: var(--gutter-s);
+    appearance: none;
+}
+
+main section .right .filter input::-webkit-slider-runnable-track{
+    background-color: var(--bg-active);
+    height: 3px;
+     border-radius: 2px;
+}
+
+
+
+main section .right .filter input::-webkit-slider-thumb{
+    cursor: pointer;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    margin-top: -8.5px
+}
+
+canvas{
+    max-width: 90%;
+    max-height: 80vh;
+    display: none;
+}
+
+.presets{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter-s);
+}
+
+
+/* MOBLIE RESPONSIVE*/
+
+@media (max-width: 768px) {
+
+    main section{
+        flex-direction: column; 
+        padding: var(--padding-lg);
+        gap: var(--gutter-m);
+    }
+
+    main section .left{
+        width: 100%;
+        gap: var(--gutter-m);
+    }
+
+    main section .right{
+        width: 100%; 
+        padding: var(--padding-md); 
+    }
+
+    main section .top{
+        flex-wrap: wrap; 
+        justify-content: center; 
+    }
+
+    main section .bottom{
+        padding: var(--padding-lg); 
+        aspect-ratio: auto; 
+        min-height: 250px; 
+    }
+
+    main section .bottom .placeholder i{
+        font-size: 5rem; 
+    }
+
+    main section .bottom .placeholder p{
+        font-size: var(--font-m); 
+        text-align: center;
+    }
+
+    canvas{
+        max-width: 100%; 
+        max-height: 60vh; 
+    }
+
+    .btn{
+        width: 100%; 
+        text-align: center;
+    }
+
+    .presets{
+        justify-content: center;
+    }
+}
